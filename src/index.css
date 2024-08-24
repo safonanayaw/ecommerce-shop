@@ -1,4 +1,4 @@
-
+/* importing google font outfit and prata  */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
 @tailwind base;
 @tailwind components;
@@ -16,4 +16,11 @@ a.active hr{
   font-family: "Prata", serif;
   font-weight: 400;
   font-style: normal;
+}
+/* changing the bg color an ancho tag to black and text white */
+@media (max-width:640px) {
+  a.active{
+    background-color: black;
+    color: white;
+  }
 }
