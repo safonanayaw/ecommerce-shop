@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Collection from './pages/Collection'
 import About from './pages/About'
@@ -9,12 +9,15 @@ import Cart from './pages/Cart'
 import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
+import Navbar from './components/Navbar'
 
 
 
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] 1g:px-[9vw]'>
+
+      <Navbar />
       {/* Creating react router dom for the route page path */}
       <Routes>
         {/* Creating individual route path */}
@@ -28,6 +31,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/place-order' element={<PlaceOrder />} />
         <Route path='orders' element={<Orders />} />
+
       </Routes>
     </div>
   )

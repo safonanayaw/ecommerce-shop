@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* this is to hide the anchor link hr when it class it not set to active */
+a.active hr{
+  display: block;
+}
