@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom';
 // getting the destructuring arguments from props
 const ProductItem = ({id, image, name, price}) => {
 
-    // get the currency detail from the shopContext using useContext hook
+    // get the currency from the shopContext using useContext hook
     const {currency} = useContext(ShopContext);
 
   return (
-    // the to path redirect to product/:id path
+    // the 'to' path redirect to 'product/:id' route path
     <Link className='text-gray-700 cursor-pointer' to={`/product/${id}`}>
         <div className='overflow-hidden'>
             {/* display image from index 0 */}
