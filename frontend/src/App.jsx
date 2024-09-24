@@ -11,17 +11,20 @@ import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import searchBar from './components/searchBar'
+import SearchBar from './components/SearchBar'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const App = () => {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] 1g:px-[9vw]'>
+      <ToastContainer />
       {/* NavBar Component */}
       <Navbar />
-      {/* SearchBar component */}
-      <searchBar />
+      {/* searchBar component */}
+      <SearchBar />
       {/* Creating react router dom for the route page path */}
       <Routes>
         {/* Creating individual route path */}

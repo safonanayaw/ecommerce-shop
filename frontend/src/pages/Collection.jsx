@@ -6,7 +6,7 @@ import ProductItem from '../components/ProductItem';
 
 const Collection = () => {
 // useContext to get all products
-const {products} = useContext(ShopContext);
+const {products, search, showSearch} = useContext(ShopContext);
 // useState to display and block filter box
 const [showFilter, setShowFilter] = useState(false);
 // filter product useState
@@ -57,6 +57,10 @@ const toggleSubCategory = (e) =>{
 const applyFilter = () => {
     //create product copy
     let productsCopy = products.slice();
+
+    if(showSearch && search){
+        productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+    }
     //if category state array is not empty then filter productsCopy array to includes category array
     if(category.length > 0){
         productsCopy = productsCopy.filter(item => category.includes(item.category));
@@ -92,10 +96,12 @@ const sortProducts = () => {
     }
 }
 
+// apply filter function when the array state change with useEffect
 useEffect(()=> {
     applyFilter();
-}, [category, subCategory])
+},[category, subCategory, search, showSearch])
 
+// sortProduct function useEffect
 useEffect(()=>{
     sortProducts();
 },[sortType])
