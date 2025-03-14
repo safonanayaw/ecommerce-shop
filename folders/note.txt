@@ -1,9 +1,0 @@
-ecommerce app note
-use npm create vite@latest 
-select react and JS
-change directory to folder path
-install npm install to install the node dependencies 
-use npm install react-router-dom(to install react router to use react router) react toastify( used to use toast notification in the app)
-after run the project by npm run dev
-
-to install tailwindcss : https://tailwindcss.com/docs/guides/vite

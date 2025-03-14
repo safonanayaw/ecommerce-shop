@@ -1,17 +1,20 @@
 import { createContext, useEffect } from "react";
-import { products } from "../assets/assets";
 import {useState} from 'react';
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import axios from "axios"
 // using useContext to make value attribute accesible in all components
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
     const currency = '$';
     const delivery_fee = 10;
+    const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
+    const [products, setProduct] = useState([]);
+    const [token, setToken] = useState('');
     const navigate = useNavigate();
 
     const addToCart  = async(itemId, size) =>{
@@ -75,17 +78,35 @@ const ShopContextProvider = (props) => {
         }
         return totalAmount;
     }
-    // check cartItems objects state variables in console
+
+
+    const getProductData = async () => {
+        try {
+            console.log("Backend URL:", backendUrl); // Debugging line
+            const response = await axios.get(backendUrl + "/api/product/list");
+            console.log("Response Data:", response.data); // Debugging line
+            setProduct(response.data.product); // Assuming the response has a 'products' field
+        } catch (error) {
+            console.error("Error:", error.message);
+        }
+    }
+
+    useEffect(() => {
+        getProductData()
+    }, []);
+
+    // if token is unavailable in the token statebut available in the local state then save the localtoken in the token state
     useEffect(()=>{
-        console.log(cartItems);
-        
-    }, [cartItems]);
+        if(!token && localStorage.getItem("token")){
+            setToken(localStorage.getItem("token"))
+        }
+    })
 
     const value = {
         products , currency , delivery_fee,
-        search, setSearch, showSearch, setShowSearch,
+        search, setSearch, showSearch, setShowSearch,setCartItems, cartItems,
         cartItems, addToCart, getCartCount, updateQuantity,
-        getCartAmount, navigate
+        getCartAmount, navigate, backendUrl, token, setToken
     }
     return (
         <ShopContext.Provider value={value}>

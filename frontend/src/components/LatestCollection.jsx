@@ -14,7 +14,7 @@ const LatestCollection = () => {
     useEffect(()=>{
         // using the setLatestProducts state of the useState to set the latestProducts arrays with the products objects ans slicing to 10 index
         setLatestProducts(products.slice(0,10));
-    }, [])
+    }, [products])
 
   return (
     <div className='my-10'>

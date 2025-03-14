@@ -99,7 +99,7 @@ const sortProducts = () => {
 // apply filter function when the array state change with useEffect
 useEffect(()=> {
     applyFilter();
-},[category, subCategory, search, showSearch])
+},[category, subCategory, search, showSearch, products])
 
 // sortProduct function useEffect
 useEffect(()=>{
