@@ -7,7 +7,7 @@ import axios from "axios"
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-    const currency = '$';
+    const currency = '£';
     const delivery_fee = 10;
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [search, setSearch] = useState('');
@@ -37,7 +37,7 @@ const ShopContextProvider = (props) => {
         }
         setCartItems(cartData);
 
-        // if login, we update the cartData
+        // if login, then update the cartData
         if(token){
             try{
                 await axios.post(backendUrl + "/api/cart/add", {itemId,size}, {headers:{token}})
@@ -127,7 +127,7 @@ const ShopContextProvider = (props) => {
         getProductData()
     }, []);
 
-    // if token is unavailable in the token statebut available in the local state then save the localtoken in the token state
+    // if token is unavailable in the token state but available in the local state then save the localtoken in the token state
     useEffect(()=>{
         if(!token && localStorage.getItem("token")){
             setToken(localStorage.getItem("token"))
