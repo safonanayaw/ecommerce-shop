@@ -1,0 +1,48 @@
+ecommerce app note
+use npm create vite@latest 
+select react and JS
+change directory to folder path
+install npm install to install the node dependencies 
+use npm install react-router-dom(to install react router to use react router) react toastify(to use toast notification in the app)
+after run the project by npm run dev
+
+to install tailwindcss : https://tailwindcss.com/docs/guides/vite
+
+backend dependancies
+********npm i cors dotenv express jsonwebtoken mongoose multer nodemon razorpay stripe validator cloudinary bcrypt
+cors = allow the front end IP to access the backend
+dotenv = to save environment variables
+express = create APIs
+jsonwebtoken = enable user authentication enabling user to login in the website
+mongoose = manage database connectivity
+multer = store images on our cloudinary storage
+nodmon = to auto restart server when files changes are detected
+razorpay, stripe = setup online payment integration
+validator = checking if data comming from the user is valid or not
+cloudinary = online cloud for storing images.
+bcrypt = to encrypt and store user password and store in databse
+
+model  where I save the data in the mongoose database
+cloudinary where I configure the cloudinary for the image storage
+controller  manage all logic of the backend
+Routes will manage express server Routes
+
+add "type":"module" in parkage.json in order to import the modules in the backend files
+
+add app.use(cors()) in server.js to access the backend from any IP
+
+********to start backend server, navigate to backend directory : npm run server -local/npm run start - deployment*****
+********to start front end, naviagte to frontend directory: npm run dev ********
+
+thunder client extention to manage rest API 
+
+mongoDB details
+username: safoasare17
+password: Zionawat17
+IP: 92.40.184.245
+
+mongodb+srv://safoasare17:Zionawat17@tatec.1xmgu.mongodb.net/?retryWrites=true&w=majority&appName=Tatec
+mongodb+srv://safoasare17:Zionawat17@tatec.1xmgu.mongodb.net/
+
+youtube current timestamp: https://youtu.be/7E6um7NGmeE?t=18936
+on deployement 
