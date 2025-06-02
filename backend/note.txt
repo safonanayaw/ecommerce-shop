@@ -36,12 +36,5 @@ add app.use(cors()) in server.js to access the backend from any IP
 
 thunder client extention to manage rest API 
 
-mongoDB details
-username: safoasare17
-password: Zionawat17
-IP: 92.40.184.245
-
-mongodb+srv://safoasare17:Zionawat17@tatec.1xmgu.mongodb.net/?retryWrites=true&w=majority&appName=Tatec
-mongodb+srv://safoasare17:Zionawat17@tatec.1xmgu.mongodb.net/
 
 
