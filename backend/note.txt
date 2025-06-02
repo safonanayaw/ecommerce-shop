@@ -44,5 +44,4 @@ IP: 92.40.184.245
 mongodb+srv://safoasare17:Zionawat17@tatec.1xmgu.mongodb.net/?retryWrites=true&w=majority&appName=Tatec
 mongodb+srv://safoasare17:Zionawat17@tatec.1xmgu.mongodb.net/
 
-youtube current timestamp: https://youtu.be/7E6um7NGmeE?t=18936
-on deployement 
+
